@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Add chatbot to Project Dashboard -->
+        <record id="project_dashboard_chatbot" model="ir.ui.view">
+            <field name="name">Project Dashboard with Chatbot</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.view_project_kanban"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('o_kanban_view')]" position="before">
+                    <div class="project-chatbot-container">
+                        <div class="alert alert-info project-chatbot-banner" style="margin: 10px;">
+                            <div class="d-flex align-items-center">
+                                <i class="fa fa-robot me-3" style="font-size: 24px;"/>
+                                <div class="flex-grow-1">
+                                    <strong>🤖 Project AI Assistant</strong>
+                                    <p class="mb-0">Need help with project planning? Chat with our AI assistant for guidance!</p>
+                                </div>
+                                <button class="btn btn-primary" onclick="toggleProjectChatbot()">
+                                    <i class="fa fa-comments"/> Chat Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Add chatbot to Project Form View (Create/Edit) -->
+        <record id="project_form_chatbot" model="ir.ui.view">
+            <field name="name">Project Form with Chatbot</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.edit_project"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="before">
+                    <div class="project-form-chatbot-banner bg-light p-3 mb-3" style="border-left: 4px solid #007bff;">
+                        <div class="d-flex align-items-center">
+                            <i class="fa fa-lightbulb-o me-3" style="font-size: 20px; color: #007bff;"/>
+                            <div class="flex-grow-1">
+                                <strong>💡 Get Project Guidance</strong>
+                                <p class="mb-0 text-muted">Chat with AI to get tips on project setup, milestones, and best practices</p>
+                            </div>
+                            <button type="button" class="btn btn-outline-primary btn-sm" onclick="showProjectChatbot()">
+                                <i class="fa fa-robot"/> Get Help
+                            </button>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Add chatbot to Project List View -->
+        <record id="project_tree_chatbot" model="ir.ui.view">
+            <field name="name">Project List with Chatbot</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.view_project"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="before">
+                    <div class="project-list-helper bg-info text-white p-2 mb-2" style="border-radius: 4px;">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <span>
+                                <i class="fa fa-info-circle me-2"/>
+                                <strong>Need project management guidance? Our AI assistant can help!</strong>
+                            </span>
+                            <button type="button" class="btn btn-light btn-sm" onclick="openProjectAssistant()">
+                                <i class="fa fa-comments"/> Ask AI
+                            </button>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Add chatbot to Project Settings/Configuration -->
+        <record id="project_config_chatbot" model="ir.ui.view">
+            <field name="name">Project Config with Chatbot</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="project.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('app_settings_block')]" position="before">
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <div class="content-group">
+                                    <div class="alert alert-success">
+                                        <div class="d-flex align-items-center">
+                                            <i class="fa fa-robot me-3" style="font-size: 24px;"/>
+                                            <div>
+                                                <strong>🤖 Project AI Assistant Available</strong>
+                                                <p class="mb-0">Get instant help with project configuration and best practices.</p>
+                                                <button type="button" class="btn btn-success btn-sm mt-2" onclick="launchProjectHelper()">
+                                                    <i class="fa fa-rocket"/> Launch Assistant
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
