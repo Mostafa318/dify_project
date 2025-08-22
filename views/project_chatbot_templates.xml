@@ -8,7 +8,7 @@
             <field name="model">project.project</field>
             <field name="inherit_id" ref="project.view_project_kanban"/>
             <field name="arch" type="xml">
-                <xpath expr="//div[hasclass('o_kanban_view')]" position="before">
+                <kanban position="before">
                     <div class="project-chatbot-container">
                         <div class="alert alert-info project-chatbot-banner" style="margin: 10px;">
                             <div class="d-flex align-items-center">
@@ -23,7 +23,7 @@
                             </div>
                         </div>
                     </div>
-                </xpath>
+                </kanban>
             </field>
         </record>
 
@@ -33,7 +33,7 @@
             <field name="model">project.project</field>
             <field name="inherit_id" ref="project.edit_project"/>
             <field name="arch" type="xml">
-                <xpath expr="//form" position="before">
+                <form position="before">
                     <div class="project-form-chatbot-banner bg-light p-3 mb-3" style="border-left: 4px solid #007bff;">
                         <div class="d-flex align-items-center">
                             <i class="fa fa-lightbulb-o me-3" style="font-size: 20px; color: #007bff;"/>
@@ -46,7 +46,7 @@
                             </button>
                         </div>
                     </div>
-                </xpath>
+                </form>
             </field>
         </record>
 
@@ -56,7 +56,7 @@
             <field name="model">project.project</field>
             <field name="inherit_id" ref="project.view_project"/>
             <field name="arch" type="xml">
-                <xpath expr="//tree" position="before">
+                <tree position="before">
                     <div class="project-list-helper bg-info text-white p-2 mb-2" style="border-radius: 4px;">
                         <div class="d-flex align-items-center justify-content-between">
                             <span>
@@ -68,7 +68,7 @@
                             </button>
                         </div>
                     </div>
-                </xpath>
+                </tree>
             </field>
         </record>
 
@@ -78,7 +78,7 @@
             <field name="model">res.config.settings</field>
             <field name="inherit_id" ref="project.res_config_settings_view_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//div[hasclass('app_settings_block')]" position="before">
+                <xpath expr="//div[@class='app_settings_block']" position="before">
                     <div class="row mt16 o_settings_container">
                         <div class="col-12 col-lg-6 o_setting_box">
                             <div class="o_setting_left_pane"/>
