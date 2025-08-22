@@ -19,8 +19,8 @@
     ],
     'assets': {
         'web.assets_backend': [
-            'project_dify_chatbot/static/src/js/project_chatbot.js',
-            'project_dify_chatbot/static/src/css/project_chatbot.css',
+            'static/src/js/project_chatbot.js',
+            'static/src/css/project_chatbot.css',
         ],
     },
     'installable': True,
