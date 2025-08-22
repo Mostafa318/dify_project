@@ -1,0 +1,26 @@
+/* Project Dify Chatbot CSS */
+
+.project-chatbot-container {
+    margin-bottom: 10px;
+}
+
+.project-chatbot-banner {
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.project-form-chatbot-banner {
+    border-radius: 6px;
+}
+
+.project-list-helper {
+    font-size: 14px;
+}
+
+.project-chatbot-banner .btn {
+    white-space: nowrap;
+}
+
+.project-chatbot-banner i {
+    color: #17a2b8;
+}
